@@ -14,7 +14,6 @@ func main() {
 		Factory:  factory,
 		Port:     11990,
 		PassivePorts: "20000-20010",
-		Hostname: "0.0.0.0",
 		TLS:      true,
 		CertFile: filepath.Join(cwd, "src/ftpgo/certs/server.crt"),
 		KeyFile:  filepath.Join(cwd, "src/ftpgo/certs/server.key"),
@@ -39,6 +38,6 @@ func (a auth) CheckPasswd(user string, password string) (bool, error) {
 }
 
 func MyDriverFactory() (factory server.DriverFactory, err error) {
-	factory = &FileDriverFactory{"/", server.NewSimplePerm("root", "root")}
+	factory = &FileDriverFactory{"/home/test", server.NewSimplePerm("root", "root")}
 	return
 }
