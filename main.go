@@ -13,7 +13,7 @@ func main() {
 	opts := &server.ServerOpts{
 		Factory:  factory,
 		Port:     11990,
-		PassivePorts: "20000-20010",
+		PassivePorts: "20000-20100",
 		TLS:      true,
 		CertFile: filepath.Join(cwd, "src/ftpgo/certs/server.crt"),
 		KeyFile:  filepath.Join(cwd, "src/ftpgo/certs/server.key"),
